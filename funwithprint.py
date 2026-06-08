@@ -21,11 +21,13 @@ elif age > 70:
 else:
     print("Great! You are old enough to work here!")
     print("Let's move on to the next question.")
+
 phonenumber = input("What is your phone number? (please enter 10 digits) ")
 if not(len(phonenumber) == 10):
     print("Sorry, that is not a valid phone number. Please enter 10 digits.")
     print("If you can't even enter a valid phone number, I don't think this job will work for you. Bye!")
     sys.exit("Application rejected. Have a nice day!")
+
 height = int(input("What is your height in cm? "))
 if height < 140:
     print("Sorry, you are not tall enough to work here.")
@@ -37,28 +39,31 @@ elif height > 200:
     sys.exit("Application rejected. Have a nice day!")
 else:
     print("You are just the right height! Let's move on...")
+
 experience = input("Are you comfortable around dogs? (yes or no) ")
 if experience == "yes":
     print("You have relevant job experience.That is wonderful. Let's move on...")
 else:
     print("Unfortunately, that is a mandatory requiremement. You are not fit for the job. Thank you for your time!")
     sys.exit("Application rejected. Have a nice day!")
+
 swim = input("Can you swim? (yes or no) ")
 if swim == "yes":
     print("Great! That is required for this position. Let's move on...")
 else:
     print("Unfortunately, that is a mandatory requirement. You are not fit for the job. Thank you for your time!")
     sys.exit("Application rejected. Have a nice day!")
+
 hat = input("Would you be willing to wear a ridiculous hat if it helped a dog feel comfortable? (yes or no) ")
 if hat == "yes":
     print("Great! That is actually a case that comes up a lot for this position. Let's move on...")
 else:
     print("Unfortunately, that means you are not fit for the job.")
     sys.exit("Application rejected. Have a nice day!")
+
 dog = input("Will you look at this dog? (yes or no) ")
 if dog == "yes":
     print("Great! That is a mandatory requirement for this position. Let's move on...")
-    print(figlet_format("DOG", font = "banner4"))
     print()
     print()
     print()
@@ -72,8 +77,7 @@ if dog == "yes":
     print("  || (___\====")
                
 else:
-    print("If you don't even want to look at a dog animation, then how will you work here? You need to like dogs as much as possible!")
-    sys.exit("Application rejected. Have a nice day!")
+    print("This may reflect badly on your application because you must be willing to spend as much time with dogs as possible.")
 print("Congratulations! You are a great fit for the job! I would just like to clarify your details...")
 print("Your name is " + player + ".")
 print("Your age is " + str(age) + ".")
@@ -87,32 +91,43 @@ print()
 print(figlet_format("WOOF!", font = "nvscript"))
 
 print("We have some more questions for you. This is a test to see if you are smart enough about dogs to work here.")
+print("You need to get at least half of the questions right if you want to work here.")
+
+accuracy = 0
+
 answer = input("What is the name of the dog in the movie 'Up'? ")
 if answer.lower() == "dug":
     print("Correct! Let's continue...")
+    accuracy+=1
 else:
-    print("Wrong! The correct answer is Dug. You need to know your dog movies if you want to work here. Bye!")
-    sys.exit("Application rejected. Have a nice day!")
+    print("Wrong! The correct answer is Dug. You need to know your dog movies if you want to work here.")
+
 scoobydoo = input("Which famous dog was known for solving mysteries with friends?")
 if scoobydoo.lower() == "scooby doo" or scoobydoo.lower() == "scooby":
     print("Correct! Let's continue...")
+    accuracy+=1
 else:
-    print("Wrong! The correct answer is Scooby Doo. You need to know your dog cartoons if you want to work here. Bye!")
-    sys.exit("Application rejected. Have a nice day!")
+    print("Wrong! The correct answer is Scooby Doo. You need to know your dog cartoons if you want to work here.")
+
 snoopy = input("Which famous dog was known for being the pet of charlie brown?")
 if snoopy.lower() == "snoopy":
     print("Correct! Let's continue...")
+    accuracy+=1
 else:
-    print("Wrong! The correct answer is Snoopy. You need to know your dog cartoons if you want to work here. Bye!")
-    sys.exit("Application rejected. Have a nice day!")
+    print("Wrong! The correct answer is Snoopy. You need to know your dog cartoons if you want to work here.")
+
 pluto = input("Which famous dog was known for being mickey mouse's pet?")
 if pluto.lower() == "pluto":
     print("Correct! Let's continue...")
+    accuracy+=1
 else:
-    print("Wrong! The correct answer is Pluto. You need to know your disney dogs if you want to work here. Bye!")
-    sys.exit("Application rejected. Have a nice day!")
+    print("Wrong! The correct answer is Pluto. You need to know your disney dogs if you want to work here.")
+
 print(figlet_format("WOOF!", font = "isometric2"))
-print("HOORAY!!!! you passed the dog trivia test so you are one step closer to getting the job!")
+if accuracy > 2:
+    print("You do not have enough accuracy to pass this test. I'm sorry, but you are not a good fit for the job. Bye!" )
+    sys.exit("Application rejected. Have a nice day!")
+print("HOORAY! You passed the dog trivia test with sufficient accuraacy so you are one step closer to getting the job!")
 print("We just have one more task for you to attempt...")
 print("Find out which breed of dog you are through this quiz!")
 collie = 0
@@ -312,7 +327,9 @@ else:
     time.sleep(0.1)
     print("You are a Retrieve", end= "\r")
     time.sleep(0.1)
-    print("You are a Retriever")
+    print("You are a Retriever", end= "\r")
+    time.sleep(0.1)
+    print("You are a Retriever!")
     time.sleep(0.1)
 
 print(figlet_format("WOOF", font = "larry3d"))
