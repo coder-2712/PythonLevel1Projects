@@ -38,7 +38,7 @@ if len(answer)<= 1:
   else:
     print("Incorrect!")
 else:
-  answer = input("Please enter the correct nuber of operators.")
+  answer = input("Please enter the correct number of operators.")
 print()
 print()
 print("Level Up! Try this harder one with 3 numbers!")
