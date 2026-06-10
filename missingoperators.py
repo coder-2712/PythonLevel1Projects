@@ -1,9 +1,9 @@
 import random
-
 RandomorNot = input("Would you like to play with random numbers? (y/n)\n")
 if RandomorNot == 'n':
     done = False
     while not done:
+    
         try:
             num1 = int(input("Enter first number:\n"))
             done = True
