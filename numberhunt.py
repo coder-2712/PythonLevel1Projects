@@ -1,5 +1,5 @@
 import random
-gamemode = input('There are 5 modes of play: respond from 1 to 5 for game mode.' + '\n' + '1. is when the computer thinks of a number and you guess it, 2. is when you think of a number and the computer guesses it using binary and linear search, 3. is like 1. but with letters, 4. is number hunt with only perfect squares, and 5.is the twodimensional number. hunt ')
+gamemode = input('There are 4 modes of play: respond from 1 to 4 for game mode.' + '\n' + '1. is when the computer thinks of a number and you guess it, 2. is when you think of a number and the computer guesses it using binary and linear search, 3. is like 1. but with letters, 4. is number hunt with only perfect squares.')
 if gamemode == 1:
   done = False
   number = random.randint(0,100)
@@ -110,5 +110,31 @@ elif gamemode == 3:
           done = True
     except:
       print('That is not a valid input.')
+else:
+  squarenumbers = [x**2 for x in range (1,101)]
+  num = random.choice(squarenumbers)
+  print('I have picked a random square of the first 100 numbers. Can you guess it?')
+  done = False
 
-
+  timesGuessed = 0
+  while not done:
+      try:
+        while not(answer == num):
+          
+          answer = int(input("Enter your guess: "))
+          if answer in squarenumbers:
+            if answer > num:
+                print("My number is smaller than that!")
+                timesGuessed = timesGuessed + 1
+            elif answer < num:
+                print("My number is larger than that!")
+                timesGuessed = timesGuessed + 1 
+            answer = int(input("Enter your guess: "))
+            if answer == num:
+              print("That's correct! You win!")
+              print("It took you " + str(timesGuessed) + " guesses.")
+              done = True
+          else:
+            print('Your guess is not even a square number!')
+      except:
+        print('That is not a valid input.')
