@@ -82,5 +82,5 @@ if lineorwait == "l":
     print()
     print('No thanks for coming and wasting my time!')
     print("Have a horrible day!")
-    bye = figlet_format("GOODBYE", font = "isometric2")
+    bye = figlet_format("GOODBYE")
     print(bye)
